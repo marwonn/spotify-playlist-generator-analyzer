@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Playlist Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/site.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a style="color: white;" class="navbar-brand" href="{{ url_for('playlist_analyzer') }}"> <small>Analyzer</small><span class="sr-only">(current)</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+<div class="jumbotron text-center">
+  <h1>Magic Music Generator</h1> <span class="badge badge-warning">by marcify</span>
+</div>
+
+<div class="container">
+
+  <div class="row mt-4 justify-content-center">
+
+    <div class="col-md-5">
+        <h3 style="text-align:center;">Playlist Settings</h3>
+        <hr/>
+        <form>
+
+          <div class="form-group form-control-lg">
+            <label for="seed-genre">Seed Genre</label>
+            <select class="form-control form-control-lg" id="seed-genre" name="seed-genre">
+              <option value="rock">Rock</option>
+              <option value="alternative">Alternative</option>
+              <option value="pop">Pop</option>
+              <option value="country">Country</option>
+              <option value="hip-hop">Hip-Hop</option>
+              <option value="hardcore">Hardcore</option>
+            </select>
+          </div>
+
+          <br>
+          <br>
+
+            <div class="form-group form-control-lg">
+              <label for="danceability">Danceability</label>
+              <input type="range" min="1" max="10" step="1" class="form-control-range" id="danceability" value="3" name="danceability">
+            </div>
+
+            <div class="form-group form-control-lg">
+                <label for="valence">Mood</label>
+                <input type="range" min="1" max="10" step="1" class="form-control-range" id="valence" value="5" name="valence">
+            </div>
+
+            <div class="form-group form-control-lg">
+                <label for="energy">Energy</label>
+                <input type="range" min="1" max="10" step="1" class="form-control-range" id="energy" value="2" name="energy">
+            </div>
+
+            <br>
+
+            <div class="form-group form-control-lg">
+                <label for="track-count">Track Count</label>
+                <input type="number" class="form-control form-control-lg" max="20" min="1" value="10" name="track-count" id="track-count" required>
+            </div>
+
+            <br>
+            <br>
+
+            
+            <div class="form-group form-control-lg" >
+              <label for="seed-artist">Seed Artist (optional)</label>
+              <input style="font-size:15px;" type="text" id="seed-artist" class="form-control form-control-lg" name="seed-artist" placeholder="Default is Rage Against The Machine">
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <button type="button" id="generate-spotify-recs" class="btn btn-block btn-success btn-lg">Generate playlist</button>
+
+          </form>
+          <br>
+    </div>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", () => {
+
+        const toggleRecommendation = document.querySelector(".toggle-reco")
+        if (toggleRecommendation.classList.contains("toggle-reco")){
+          toggleRecommendation.style.display="none"
+        }
+
+        const buttonSpotifyRecs = document.querySelector("#generate-spotify-recs")
+
+        buttonSpotifyRecs.addEventListener("click", () => {
+          if (toggleRecommendation.classList.contains("toggle-reco")){
+            toggleRecommendation.style.display="block"
+          }
+        })
+      })
+    </script>
+
+    <div class="col-md-5 border-left toggle-reco" id="recommendations-col">
+        <h3 style="text-align:center;">Recommendations</h3>
+        <hr/>
+        <div id="song-container">
+
+        </div>
+
+        <button type="button" id="create-my-playlist" class="btn btn-block btn-success btn-lg" style="display:none;">Save Playlist to Spotify</button>
+    </div>
+</div>
+
+<br>
+
+</body>
+</html>

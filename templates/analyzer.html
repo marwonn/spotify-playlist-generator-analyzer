@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Playlist Analyzer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" type="text/css" href="../static/css/site.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a style="color: white;" class="navbar-brand" href="{{ url_for('index') }}"> <small>Generator</small><span class="sr-only">(current)</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+
+    <div class="jumbotron text-center">
+        <h1>Magic Music Analyzer</h1> <span class="badge badge-warning">by marcify</span>
+    </div>
+
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            <div class="col-sm">
+                <div class="table-responsive">
+                    <table class="table table-hover table-sm">
+                          <tbody>
+                            <h4 style="color: goldenrod">Your TOP 10 <small>- most played tracks</small></h4>
+                            {% for entry in table_data %}
+                            {% if loop.index <= 10 %}
+                            <tr>
+                                <td style="color:whitesmoke; text-align:left">{{ entry[0]}}. {{ entry[1] }} <br> <small><strong><sub>by </sub></strong><i>{{ entry[2] }}</small> <sup>| Popularity {{ entry[3] }} of 100 |</sup></i></td>
+                            </tr>
+                            {% endif %}
+                            {% endfor %}
+                          </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            <div class="col-sm">
+                {{figure}}
+                {{fig_violin}}
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
