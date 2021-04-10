@@ -3,9 +3,9 @@ Creates a personal playlist based on self chosen settings.
 
 ### Update 2021/04/10 - added audio feature analysis & code improvements
 
-<img src="https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/new_1.png"  width="600">
+<img src="https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/1_04.png"  width="600">
 
-<img src="https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/new_2.png"  width="600">
+<img src="https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/2_04.png"  width="600">
 
 <img src="https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/new_3.png"  width="600">
 
