@@ -1,7 +1,7 @@
 # Spotify Playlist Generator
 Creates a personal playlist based on self chosen settings.
 
-### Update 2021/01/06 - added audio feature analysis & code restructuring
+### Update 2021/04/10 - added audio feature analysis & code improvements
 
 <img src="https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/new_1.png"  width="600">
 
@@ -9,7 +9,7 @@ Creates a personal playlist based on self chosen settings.
 
 <img src="https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/new_3.png"  width="600">
 
-<img src="https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/new_pic_2.png">
+<img src="https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/new_04_pic.png">
 
 
 
