@@ -10,7 +10,7 @@ Creates a personal playlist based on self chosen settings.
 
 ### Old Version
 
-<img src="https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/2_04.png"  width="400">
+<img src="https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/1.jpg"  width="400">
 ![alt text](https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/2.jpg?raw=true)
 ![alt text](https://github.com/marwonn/spotify-playlist-generator/blob/master/static/images/3.png?raw=true)
 
